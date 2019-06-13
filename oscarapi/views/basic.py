@@ -6,8 +6,6 @@ from oscar.core.loading import get_class, get_model
 from rest_framework import generics
 from rest_framework.permissions import DjangoModelPermissions
 
-from six.moves import map
-
 from oscarapi import permissions
 from oscarapi.basket.operations import (
     assign_basket_strategy,
@@ -60,7 +58,7 @@ class CountryDetail(generics.RetrieveAPIView):
 class BasketList(generics.ListCreateAPIView):
     """
     Retrieve all baskets that belong to the current user.
-    
+
     While each user can view their own basket, for creating baskets
     user must be assigned the correct (basket update) permissions.
     """
